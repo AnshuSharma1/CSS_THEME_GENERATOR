@@ -60,18 +60,14 @@
             }
         }
         @media (max-width: 991px){
-            .color-main{
-                padding: 30px 0 0 0;
-            }
+
             .add-main{
                 margin-left:20px;
                 padding: 20px 0 ;
             }
         }
         @media (min-width: 991px){
-            .color-main{
-                padding: 30px 0 0 10%;
-            }
+
             .add-main{
 
                 padding: 50px 0 50px 20px ;
@@ -80,13 +76,7 @@
                 padding-left:30px;
             }
         }
-        @media (min-width: 1200px){
-            .color-main{
-                padding: 30px 0 0 10%;
-            }
 
-
-        }
 
     </style>
 <body>
@@ -98,24 +88,11 @@
     <p>
         Welcome to LAYOUT 1 of CSS THEME GENERATOR! This is a basic layout having a header, a container , side menu and a footer with
         some additional CSS settings. <br>
-        Bootstrap settings are also provided. <br>
         Enjoy :)
     </p>
 
     <div  style=" margin-top: 30px;padding: 10px;">
         <form action="" method="POST" >
-            <div class="form-group row">
-                <label for="bootstrap enable" class="col-md-8 col-md-offset-2">
-                    <span class="col-md-6 col-sm-6 col-xs-12" style="font-size: larger;">Do you want BOOTSTRAP to be enabled?</span>
-                    <span class="col-md-3 col-sm-3 col-xs-4 text-center">
-                        YES&nbsp <input type="radio" name="bootstrap-enable" value="Yes" checked>
-                    </span>
-                    <span class="col-md-3 col-sm-3 col-xs-4 text-center">
-                        NO&nbsp  <input type="radio" name="bootstrap-enable" value="No">
-                    </span>
-                </label>
-            </div>
-            <br>
             <div class="row panel panel-default">
                     <div class="row">
                     <h3 class="text-center" > MAIN CONTAINER</h3>
@@ -199,8 +176,14 @@
                         </div>
                     </div>
                     <div class="col-md-1"><img class="hidden-sm hidden-xs" src="line.png" alt="line"></div>
-                    <div class="col-md-6">
-                        <br>
+                    <div class="col-md-6" style="padding-top: 0;">
+                        <div class="row text-center" >
+                            <div class="col-xs-12" style="margin-bottom: 30px;">
+                                <label for="main-back-color">Background-color</label>
+                                <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
+                                       name="main-back-color" id="text-back-color" value="#C7FFBD">
+                            </div>
+                        </div>
                         <div class="row">
                             <h4 class="col-xs-6 text-center" style="margin: 0;padding: 0;">
                                 Do you want a border?
@@ -212,8 +195,8 @@
                                 <label for="border-no">No <input  type="radio" id="border-no" value="Yes" name="border-enable"  style="margin-bottom: 10px;" checked></label>
                             </div>
                         </div>
-                        <div class="row border-prop " style="padding:30px 0;">
-                            <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-width">Border - width</label>
+                        <div class="row border-prop " style="padding:20px 0 0 0;">
+                            <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-width">Border-width</label>
                                 <input type="number" id="border-width" class="form-control" value="2"></div>
                             <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-type" id="border-type">Border - type</label>
                                 <select id="border-type" class="form-control" name="border-type">
@@ -225,7 +208,7 @@
                                     <option value="hidden">Hidden</option>
                                     <option value="none">None</option>
                                 </select></div>
-                            <div class="col-md-4 col-sm-12"><label for="border-color">Border - color</label>
+                            <div class="col-md-4 col-sm-12"><label for="border-color">Border -color</label>
                                 <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
                                        name="border_color" id="border-color" value="#555555"></div>
                         </div>
@@ -269,7 +252,7 @@
                                            name="border_color" id="border-color" value="EDEDE4">
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding: 0;" >
-                                    <label for="border-color">Background - color</label>
+                                    <label for="border-color">Background-color</label>
                                     <input type="text" class="form-control jscolor" style="border-radius: 4px;"
                                            name="border_color" id="border-color" value="4908AD">
                                 </div>
@@ -403,17 +386,16 @@
                                    name="side-color" id="side-color" value="1C1C1B">
                         </div>
                         <div class="col-xs-6  col-md-4 col-md-offset-1 text-center" style="padding: 0;">
-                            <label for="side-back-color">Background - color</label>
+                            <label for="side-back-color">Background-color</label>
                             <input type="text" class="form-control jscolor" style="border-radius: 4px;"
                                    name="side-back-color" id="side-back-color" value="FF9875">
                         </div>
                     </div>
                 </div>
-                <div class="row sidec" style="margin-top: 50px;">
+                <div class="row sidec" style="padding-top: 30px;">
                     <div class="col-md-4 text-center" style="font-size: 25px;">Alignment:</div>
-                    <br>
-                    <div class="col-md-2 col-sm-6 col-xs-6 col-md-offset-1 text-center" style="font-size: 20px;">
-                        <label>Left <input type="radio" name="side_align" value="Left"></label>
+                    <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6  text-center " style="font-size: 20px;">
+                        <label>Left <input type="radio" name="side_align" value="Left" checked></label>
                     </div>
                     <div class="col-md-2 col-sm-6 col-xs-6 col-md-offset-1 text-center" style="font-size: 20px;">
                         <label>Right <input type="radio" name="side_align" value="Right"></label>
@@ -460,7 +442,7 @@
                                    name="foot-color" id="foot-color" value="D0CDFA">
                         </div>
                         <div class="col-md-4 col-md-offset-1 text-center col-sm-6 col-xs-6" style="padding: 0;" >
-                            <label for="foot-back-color">Background - color</label>
+                            <label for="foot-back-color">Background-color</label>
                             <input type="text" class="form-control jscolor" style="border-radius: 4px;"
                                    name="foot-back-color" id="foot-back-color" value="555555">
                         </div>
@@ -501,12 +483,10 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
-                <div class="col-md-4 col-md-offset-2" >
-                    <button class="btn btn-danger form-control" style="margin-bottom: 10px;">Preview</button>
+                <div class="col-md-8 col-md-offset-2" >
+                    <button class="btn btn-success form-control" style="margin-bottom: 10px;">Generate Layout</button>
                 </div>
-                <div class="col-md-4 col-md-offset-1" >
-                    <button class="btn btn-success form-control">Generate Layout</button>
-                </div>
+
             </div>
         </form>
     </div>
