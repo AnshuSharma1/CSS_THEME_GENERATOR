@@ -8,6 +8,18 @@ margin:0px auto;
 padding :10px;
 background-color: #FFF9F5;
 }
+.sidemenu{
+padding: 20px;
+background-color: #FF9875;
+color: #1C1C1B;
+float: left;
+position: relative;
+width: 200px;
+height: 100%;
+}
+h3{
+margin-top:0;
+}
 .main-content {
 background-color: #FFE4C4;
  padding: 10px;
@@ -19,5 +31,12 @@ display: inline-block;
 }
 .text {
 color: #292523;
-margin: auto;
+margin-left: 250px;
+}
+.footer{
+ height: 30px;
+ background-color: #45E6BD;
+ color: #555555;
+ padding: 20px;
+ text-align: center;
 }

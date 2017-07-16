@@ -169,7 +169,7 @@ obcaecati perferendis placeat provident rem unde vero.Lorem ipsum dolor sit amet
     $_SESSION['submitted'] = true;
 
      //After checking, go to show and download of layout
-    header('location:Layout1_show.html');
+    header('location:Layout1_download.html');
 
 }
 ?>
