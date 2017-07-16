@@ -2,20 +2,87 @@
 <html>
 <head>
     <title>Layout</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="Layout1_style.css">
     <link href="https://fonts.googleapis.com/css?family=Comfortaa|Crete+Round|Dancing+Script|Fresca|Oxygen|Pacifico|Raleway|Roboto|Satisfy|Yantramanav"
           rel="stylesheet">
+    <style>
+        *{
+            font-family:'Roboto', sans-serif;;
+            font-size:16px;
+        }
+        .maincontainer{
+            max-width: 1200px;
+            min-width: 1000px;
+            float: left;
+            margin: 10px;
+            padding :14px;
+            background-color: #C7FFBD;
+            border: 2px dotted #555555;
+
+        }
+        .navbar{
+            height: 50px;
+            background-color: #45E6BD;
+            color: black;
+            padding: 25px;
+        }
+        .nav-head{
+            float:left;
+        }
+        .nav-items{
+            padding: 0 10px;
+        }
+        .nav-items li{
+            display: inline-block;
+            padding:0 20px;
+            float: right;
+        }
+
+        .sidemenu{
+            padding: 20px;
+            background-color: #E9967A;
+            color:darkred;
+            float: left;
+            position: relative;
+            width: 200px;
+            height: 100%;
+        }
+
+        .main-content {
+            background-color: #FFE4C4;
+            border: 4px double black;
+            padding: 10px;
+            margin:20px;
+            overflow: auto;
+        }
+        .text {
+            color: darkblue;
+            margin-left: 260px;
+        }
+        p{
+            display: inline-block;
+        }
+        h3{
+            margin-top:0;
+        }
+        .footer{
+            height: 30px;
+            background-color: #45E6BD;
+            color: #b6090c;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 <div class="maincontainer">
     <div class="navbar">
-        <div>
-            <div class="nav-head">Website name</div>
-            <div class="menu nav-items">
-                <li>Home</li>
-                <li>Products</li>
-                <li>Blog</li>
-            </div>
+        <div class="nav-head">Website name</div>
+        <div class="nav-items">
+            <li>Home</li>
+            <li>Products</li>
+            <li>Blog</li>
         </div>
     </div>
 
@@ -27,7 +94,7 @@
                 <li>Non, optio!</li>
                 <li>Asperiores, nesciunt?</li>
             </ul>
-            <p style="display: inline">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores,
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias asperiores,
                 corporis culpa debitis, enim fugiat laborum modi mollitia obcaecati perferendis placeat provident rem
                 unde vero.
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, odit! </p>

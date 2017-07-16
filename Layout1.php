@@ -1,3 +1,13 @@
+<?php
+error_reporting(!E_NOTICE);
+@session_start();
+if ($_SESSION['submitted']) {
+    $_SESSION['submitted'] = false;
+    header('location:Layout1.php');
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<meta charset="utf-8">
@@ -89,10 +99,12 @@
         Welcome to LAYOUT 1 of CSS THEME GENERATOR! This is a basic layout having a header, a container , side menu and a footer with
         some additional CSS settings. <br>
         Enjoy :)
+        <br>
+        Note: Scale your elements accordingly with the sizes of the elements!
     </p>
 
     <div  style=" margin-top: 30px;padding: 10px;">
-        <form action="" method="POST" >
+        <form action="Layout1_check.php" method="POST" >
             <div class="row panel panel-default">
                     <div class="row">
                     <h3 class="text-center" > MAIN CONTAINER</h3>
@@ -101,8 +113,8 @@
                             <label style=" display: block;">
                                 <h4 class="text-center" style="margin: 10px;font-family: 'Fresca', sans-serif;font-size: 27px;">What type of container do you want?</h4>
                                 <br><br>
-                                <span  class="col-md-3 col-md-offset-2 col-sm-6 col-xs-6 text-right" style="font-size: larger;">FIXED <input checked name="container-type" type="radio" value="fixed" id="fixed"></span>                      </span>
-                                <span class="col-md-3 col-md-offset-2 col-sm-6 col-xs-6 text-left"  style="font-size: larger;">FLUID <input name="container-type" type="radio" value="fluid" id="fluid"></span>
+                                <span  class="col-md-3 col-md-offset-2 col-sm-6 col-xs-6 text-right" style="font-size: larger;">FIXED <input checked name="container_type" type="radio" value="fixed" id="fixed"></span>                      </span>
+                                <span class="col-md-3 col-md-offset-2 col-sm-6 col-xs-6 text-left"  style="font-size: larger;">FLUID <input name="container_type" type="radio" value="fluid" id="fluid"></span>
                             </label>
                         </div> <!-- Type of container: Fluid or Fixed-->
                             <br><br>
@@ -112,7 +124,7 @@
                                 <div class="input-group col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1  col-xs-10 col-xs-offset-1">
                                     <input id="container_width" type="number" min="500" max="1350"
                                            class="form-control" name="container_width"
-                                           placeholder="Width of container" value="1000">
+                                           placeholder="Width of container" value="1000" >
                                     <span class="input-group-addon">px</span>
                                 </div>
                             </div>
@@ -121,7 +133,7 @@
                                     <div class="col-md-4 " style="margin: 3px;font-size: larger;text-align: center;">Min Width:</div>
                                     <div class="input-group col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                                         <input id="container_width" type="number" min="500" max="1350"
-                                               class="form-control form-inline" name="min_width"
+                                               class="form-control form-inline" name="min-width"
                                                placeholder="Min width of container" value="1000">
                                         <span class="input-group-addon">px</span>
                                     </div>
@@ -131,8 +143,8 @@
                                     <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Max Width:</div>
                                     <div class="input-group col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
                                         <input id="container_width" type="number" min="500" max="1350"
-                                               class="form-control form-inline" name="max_width"
-                                               placeholder="Max width of container" value="1000">
+                                               class="form-control form-inline" name="max-width"
+                                               placeholder="Max width of container" value="1200">
                                         <span class="input-group-addon">px</span>
                                     </div>
                                 </div>
@@ -162,7 +174,7 @@
                         <div class="form-group col-md-8 col-md-offset-2">
                             <label for="main-padding">Padding</label>
                             <div class="input-group">
-                                <input type="number" id="main-padding" value="10" class="form-control">
+                                <input type="number" name="main-padding" id="main-padding" value="10" min="0" class="form-control">
                                 <span class="input-group-addon" >px</span>
                             </div>
                         </div>
@@ -170,7 +182,7 @@
                             <br>
                             <label for="main-margin">Margin</label>
                             <div class="input-group">
-                                <input type="number" id="main-margin" value="10" class="form-control">
+                                <input type="number" name="main-margin" id="main-margin" value="0" min="0" class="form-control">
                                 <span class="input-group-addon" >px</span>
                             </div>
                         </div>
@@ -181,7 +193,7 @@
                             <div class="col-xs-12" style="margin-bottom: 30px;">
                                 <label for="main-back-color">Background-color</label>
                                 <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
-                                       name="main-back-color" id="text-back-color" value="#C7FFBD">
+                                       name="main-back-color" id="text-back-color" value="#FFF9F5">
                             </div>
                         </div>
                         <div class="row">
@@ -192,25 +204,25 @@
                                 <label for="border-yes">Yes <input type="radio" id="border-yes" value="Yes" name="border-enable" style="margin-bottom: 10px;"></label>
                             </div>
                             <div class="col-xs-3 text-center" style="padding: 0;">
-                                <label for="border-no">No <input  type="radio" id="border-no" value="Yes" name="border-enable"  style="margin-bottom: 10px;" checked></label>
+                                <label for="border-no">No <input  type="radio" id="border-no" value="No" name="border-enable"  style="margin-bottom: 10px;" checked></label>
                             </div>
                         </div>
                         <div class="row border-prop " style="padding:20px 0 0 0;">
                             <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-width">Border-width</label>
-                                <input type="number" id="border-width" class="form-control" value="2"></div>
+                                <input type="number" id="border-width" name="main-border-width" class="form-control" value="2"></div>
                             <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-type" id="border-type">Border - type</label>
-                                <select id="border-type" class="form-control" name="border-type">
+                                <select id="border-type" class="form-control" name="main-border-type">
+                                    <option value="solid">Solid</option>
                                     <option value="dotted">Dotted</option>
                                     <option value="dashed">Dashed</option>
-                                    <option value="solid">Solid</option>
                                     <option value="double">Double</option>
-                                    <option value="Groove">Groove</option>
+                                    <option value="groove">Groove</option>
                                     <option value="hidden">Hidden</option>
                                     <option value="none">None</option>
                                 </select></div>
                             <div class="col-md-4 col-sm-12"><label for="border-color">Border -color</label>
                                 <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
-                                       name="border_color" id="border-color" value="#555555"></div>
+                                       name="main-border-color" id="border-color" value="#555555"></div>
                         </div>
                     </div>
                 </div> <!-- Additional settings -->
@@ -223,43 +235,40 @@
                 <hr style="width: 30%; margin: 20px 20px 30px 35%; border-color: #a1a1a1;">
                 <br>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 text-center">
-                        <div class="row" style="display: block;font-size: larger;">
-                            <label style="padding: 0 20px;margin: 0;font-size: 18px;" for="header-yes">Do you want a header??</label>
-                            <input type='hidden' value='0' name='header_check'>
-                            <input type="checkbox" id="header_check" value='1' style="margin-bottom: 20px;" name="header_check">
-                            <br>
-                            <br>
+                    <div class="col-md-7 col-sm-12 col-xs-12 ">
+                        <div class="row text-center" style="display: block;font-size: larger;">
+                            <label style="padding: 0 20px 0 0;margin: 0;font-size: 18px;" for="header_check">Do you want a header??</label>
+                            <input type='hidden' value='0' name='nav_check'>
+                            <input type="checkbox" id="header_check" value='1' style="margin-bottom: 20px;" name="nav_check">
+                            <br><br>
                         </div> <!-- Do you want a header?-->
                         <div class="navc">
                             <div class="row" style="padding: 30px 0 0 0;">
-                                <div class="test1">
-                                    <div class="form-group row" style="margin-bottom: 50px;">
-                                        <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Height:</div>
-                                        <div class="input-group col-md-8">
-                                            <input id="container_width" type="number" min="500" max="1350"
-                                                   class="form-control form-inline" name="container_width"
-                                                   placeholder="Width of container" value="1000">
-                                            <span class="input-group-addon">px</span>
-                                        </div>
+                                <div class="form-group row" style="margin-bottom: 50px;">
+                                    <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Height:</div>
+                                    <div class="input-group col-md-8">
+                                        <input id="navbar_height" type="number" min="20" max="100"
+                                               class="form-control form-inline" name="nav-height"
+                                               placeholder="Height of header" value="30">
+                                        <span class="input-group-addon">px</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="row" style="padding: 0 ;">
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="margin-bottom: 20px;padding-left: 0;">
+                                <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-6 text-center" style="margin-bottom: 20px;padding-left: 0;">
                                     <label for="border-color">Text-color</label>
                                     <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                           name="border_color" id="border-color" value="EDEDE4">
+                                           name="nav-color" id="border-color" value="555555">
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-xs-6 text-center" style="padding: 0;" >
+                                <div class="col-md-4 col-md-offset-1 col-sm-6 col-xs-6 text-center" style="padding: 0;" >
                                     <label for="border-color">Background-color</label>
                                     <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                           name="border_color" id="border-color" value="4908AD">
+                                           name="nav-back-color" id="border-color" value="45E6BD">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 hidden-sm hidden-xs navc" style="text-align:  center;">
+                    <div class="col-md-5 hidden-sm hidden-xs navc" style="text-align:  center; padding-left: 0;padding-right: 30px;">
                         <img src="header.png" alt="Main container" width="100%">
                     </div>
                 </div>
@@ -267,8 +276,8 @@
                     <div class="col-md-12 navc">
                         <div class="row text-center">
                             <h3  style="color: black;font-size: 17px;display: inline-block;margin: 30px 0 10px 0; ">Do you want a header menu?</h3>
-                            <input type='hidden' value='0' name='nav_check'>
-                            <input type="checkbox" class="checkbox-inline" id="nav_check"  style="margin-top: -5px;margin-left: 10px;" name="nav_check" value='1'>
+                            <input type='hidden' value='0' name='nav_check_menu'>
+                            <input type="checkbox" class="checkbox-inline" id="nav_check_menu"  style="margin-top: -5px;margin-left: 10px;" name="nav_check_menu" value='1'>
                         </div>
                     </div>
                 </div>
@@ -284,17 +293,17 @@
                         <br>
                         <div class="col-md-5 row text-center" style="margin-bottom: 20px;">
                             <div class="form-group col-md-8 col-md-offset-2">
-                                <label for="main-padding">Padding</label>
+                                <label for="cont-padding">Padding</label>
                                 <div class="input-group">
-                                    <input type="number" id="main-padding" value="10" class="form-control">
+                                    <input type="number" id="cont-padding" value="10" class="form-control" name="cont-padding">
                                     <span class="input-group-addon" >px</span>
                                 </div>
                             </div>
                             <div class="form-group col-md-8 col-md-offset-2">
                                 <br>
-                                <label for="main-margin">Margin</label>
+                                <label for="cont-margin">Margin</label>
                                 <div class="input-group">
-                                    <input type="number" id="main-margin" value="10" class="form-control">
+                                    <input type="number" id="cont-margin" value="0" class="form-control" name="cont-margin">
                                     <span class="input-group-addon" >px</span>
                                 </div>
                             </div>
@@ -308,9 +317,9 @@
                                            name="text-color" id="text-color" value="#292523">
                                 </div>
                                 <div class="col-xs-6" style="padding:0;">
-                                    <label for="text-back-color">Background-color</label>
+                                    <label for="cont-back-color">Background-color</label>
                                     <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
-                                           name="text-back-color" id="text-back-color" value="#C7FFBD">
+                                           name="cont-back-color" id="cont-back-color" value="#FFE4C4">
                                 </div>
                             </div>
                             <br><br>
@@ -322,14 +331,14 @@
                                     <label for="border-text-yes">Yes &nbsp<input type="radio" id="border-text-yes" value="Yes" name="text-border" style="margin-bottom: 10px;"></label>
                                 </div>
                                 <div class="col-xs-3" style="padding: 0;">
-                                    <label for="border-text-no">No &nbsp<input  type="radio" id="border-text-no" value="Yes" name="text-border"  style="margin-bottom: 10px;" checked></label>
+                                    <label for="border-text-no">No &nbsp<input  type="radio" id="border-text-no" value="No" name="text-border"  style="margin-bottom: 10px;" checked></label>
                                 </div>
                             </div>
                             <div class="row border-text-prop " style="padding:30px 0;">
-                                <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-width">Border - width</label>
-                                    <input type="number" id="border-width" class="form-control" value="2"></div>
-                                <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="border-type" id="border-type">Border - type</label>
-                                    <select id="border-type" class="form-control" name="border-type">
+                                <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="cont-border-width">Border - width</label>
+                                    <input type="number" id="cont-border-width" class="form-control" value="2" name="cont-border-width"></div>
+                                <div class="col-md-4 col-sm-6" style="margin-bottom: 20px;"><label for="cont-border-type" id="border-type">Border - type</label>
+                                    <select id="cont-border-type" class="form-control" name="cont-border-type">
                                         <option value="dotted">Dotted</option>
                                         <option value="dashed">Dashed</option>
                                         <option value="solid">Solid</option>
@@ -338,9 +347,9 @@
                                         <option value="hidden">Hidden</option>
                                         <option value="none">None</option>
                                     </select></div>
-                                <div class="col-md-4"><label for="border-color">Border - color</label>
+                                <div class="col-md-4"><label for="cont-border-color">Border - color</label>
                                     <input type="text" class="form-control form-inline jscolor" style="border-radius: 4px;"
-                                           name="border_color" id="border-color" value="#555555"></div>
+                                           name="cont-border-color" id="cont-border-color" value="#555555"></div>
                             </div>
                         </div>
                     </div>
@@ -355,8 +364,8 @@
                         <div class="row" style="display: block;font-size: larger;">
                             <label style="padding: 0 20px;margin: 0;font-size: 18px;" for="sidemenu_check">Do you want a side
                                 menu??</label>
-                            <input type='hidden' value='0' name='side_check'>
-                            <input type="checkbox" id="sidemenu_check" value='1' style="margin-bottom: 20px;" name="side_check">
+                            <input type='hidden' value='0' name='side-check'>
+                            <input type="checkbox" id="sidemenu_check" value='1' style="margin-bottom: 20px;" name="side-check">
                             <br>
                         </div>
                         <div class="sidec">
@@ -364,9 +373,9 @@
                                     <div class="form-group" style="margin-bottom: 50px;">
                                         <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Width:</div>
                                         <div class="input-group col-md-8">
-                                            <input id="side_width" type="number" min="500" max="1350"
-                                                   class="form-control form-inline" name="side_width"
-                                                   placeholder="Width of side menu" value="1000">
+                                            <input id="side_width" type="number" min="50" max="500"
+                                                   class="form-control form-inline" name="side-width"
+                                                   placeholder="Width of side menu" value="200">
                                             <span class="input-group-addon">px</span>
                                         </div>
                                     </div>
@@ -395,10 +404,10 @@
                 <div class="row sidec" style="padding-top: 30px;">
                     <div class="col-md-4 text-center" style="font-size: 25px;">Alignment:</div>
                     <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6  text-center " style="font-size: 20px;">
-                        <label>Left <input type="radio" name="side_align" value="Left" checked></label>
+                        <label>Left <input type="radio" name="side-align" value="left" checked></label>
                     </div>
                     <div class="col-md-2 col-sm-6 col-xs-6 col-md-offset-1 text-center" style="font-size: 20px;">
-                        <label>Right <input type="radio" name="side_align" value="Right"></label>
+                        <label>Right <input type="radio" name="side-align" value="right"></label>
                     </div>
                 </div>
             </div>
@@ -420,9 +429,9 @@
                                 <div class="form-group" style="margin-bottom: 50px;">
                                     <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Height:</div>
                                     <div class="input-group col-md-8">
-                                        <input id="footer_height" type="number" min="500" max="1350"
-                                               class="form-control form-inline" name="footer_width"
-                                               placeholder="Height of footer" value="1000">
+                                        <input id="footer_height" type="number" min="20" max="150"
+                                               class="form-control form-inline" name="footer-height"
+                                               placeholder="Height of footer" value="30">
                                         <span class="input-group-addon">px</span>
                                     </div>
                                 </div>
@@ -439,12 +448,12 @@
                         <div class="col-md-4 col-md-offset-1 text-center col-sm-6 col-xs-6"  style="padding-left: 0;">
                             <label for="foot-color">Text-color</label>
                             <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                   name="foot-color" id="foot-color" value="D0CDFA">
+                                   name="footer-color" id="foot-color" value="555555">
                         </div>
                         <div class="col-md-4 col-md-offset-1 text-center col-sm-6 col-xs-6" style="padding: 0;" >
                             <label for="foot-back-color">Background-color</label>
                             <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                   name="foot-back-color" id="foot-back-color" value="555555">
+                                   name="footer-back-color" id="foot-back-color" value="45E6BD">
                         </div>
                     </div>
                 </div>
@@ -457,16 +466,16 @@
                     <label style="font-size: larger;margin-bottom: 0;padding: 10px;" for="font" class="text-center col-md-4">FONT-STYLE&nbsp</label>
                     <div class="col-md-7" style="padding: 0;">
                         <select name="font-style" id="font" class="form-control">
-                            <option value="'Roboto', sans-serif;">Roboto</option>
-                            <option value="'Raleway', sans-serif;">Raleway</option>
-                            <option value="'Fresca', sans-serif;">Fresca</option>
+                            <option value="'Roboto', sans-serif">Roboto</option>
+                            <option value="'Raleway', sans-serif">Raleway</option>
+                            <option value="'Fresca', sans-serif">Fresca</option>
                             <option value="'Pacifico', cursive">Pacifico</option>
-                            <option value="'Dancing Script', cursive;">Dancing Script</option>
-                            <option value="'Crete Round', serif;">Crete Round</option>
-                            <option value="'Comfortaa', cursive;">Comfortaa</option>
-                            <option value="'Satisfy', cursive;">Satisfy</option>
-                            <option value="'Yantramanav', sans-serif;">Yantramanav</option>
-                            <option value="'Oxygen', sans-serif;">Oxygen</option>
+                            <option value="'Dancing Script', cursive">Dancing Script</option>
+                            <option value="'Crete Round', serif">Crete Round</option>
+                            <option value="'Comfortaa', cursive">Comfortaa</option>
+                            <option value="'Satisfy', cursive">Satisfy</option>
+                            <option value="'Yantramanav', sans-serif">Yantramanav</option>
+                            <option value="'Oxygen', sans-serif">Oxygen</option>
                         </select>
                     </div>
 
