@@ -2,21 +2,41 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
-    <!--<script src="jquery-3.2.1.min.js"></script>-->
-    <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
     <title>Layout 3</title>
     <style>
         *{
-            font: 400 16px/1.8 "Lato", sans-serif;
+            font-family:"Lato", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height:  1.8;
         }
         .maincontainer{
             height: 100%;
             float: right;
-            margin: 10px ;
-            padding: 20px;
             position: relative;
-            width: 70%;
+            width: 100%;
+        }
+        .navbar{
+            height: 40px;
+            color: white;
+            font-size: larger;
+            background-color: #3c3c3c;
+            padding: 15px;
+        }
+        .nav-head{
+            float:left;
+        }
+        .nav-items{
+            padding: 0 10px;
+        }
+        .nav-items li{
+            display: inline-block;
+            padding:0 20px;
+            float: right;
+        }
+        .nav-items li a{
+            text-decoration: none;
+            color: white;
         }
 
         body, html {
@@ -65,48 +85,49 @@
             padding: 18px;
             letter-spacing: 10px;
         }
-        .navbar{
-            height: 40px;
-            color: white;
+
+        #home{
+            padding: 20px 50px;
+        }
+        #home h3{
+            text-align: center;
+            letter-spacing: 5px;
+            font-weight: 500;
             font-size: larger;
-            background-color: #3c3c3c;
-            padding: 15px;
-            top: 0;
-            border-radius: 0;
         }
-        .nav-head{
-            float:left;
+        #home p{
+            color: #3c3c3c;
         }
-        .nav-items{
-            padding: 0 10px;
+        #about,#contact{
+            padding: 20px 50px; background-color: #3c3c3c; color: white; text-align: justify;
         }
-        .nav-items li{
-            display: inline-block;
-            padding:0 20px;
-            float: right;
+        #about h3,#contact h3{
+            text-align: center;font-size: larger; letter-spacing: 5px; font-weight: 500;
+        }
+        #last{
+            text-align: center; letter-spacing: 5px;font-size: larger;
         }
     </style>
 </head>
 <body>
 <div class="maincontainer">
-
     <div class="bgimg-1">
         <div class="navbar">
             <div class="nav-head">Website name</div>
             <div class="nav-items">
-                <li><a href="#contact" style="text-decoration: none;color: white;">Contact Us</a></li>
-                <li><a href="#about" style="text-decoration: none;color: white;">About</a></li>
-                <li><a href="#home" style="text-decoration: none;color: white;">Home</a></li>
+                <li><a href="#contact" >Contact Us</a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#home" >Home</a></li>
             </div>
         </div>
         <div class="head">
-            <span class="main">Welcome to Layout 3</span>
+        <span class="main">Welcome to Layout 3</span>
         </div>
     </div>
 
-    <div id="home" style="padding: 20px 50px; ">
-        <h3 style="text-align: center; letter-spacing: 5px; font-weight: 500;font-size: larger; "> INTRODUCTION </h3>
-        <p style="color: #3c3c3c;">
+    <div id="home">
+        <h3 > INTRODUCTION </h3>
+        <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
             maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
             autem culpa cumque cupiditate dolor doloremque doloribus, explicabo fugiat id in incidunt inventore iste iure
@@ -123,8 +144,8 @@
         </div>
     </div>
 
-    <div id="about" style="padding: 20px 50px; background-color: #3c3c3c;color: white; text-align: justify;" >
-        <h3 style="text-align: center;font-size: larger; letter-spacing: 5px; font-weight: 500;"> About </h3>
+    <div id="about" >
+        <h3> About </h3>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
             maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
@@ -144,19 +165,19 @@
         </div>
     </div>
 
-    <div id="contact" style="padding: 20px 50px; background-color: #3c3c3c;color: white; text-align: justify;" >
-        <h3 style="text-align: center; letter-spacing: 5px; font-weight: 500; font-size: larger;"> Contact Us </h3>
+    <div id="contact" >
+        <h3> Contact Us </h3>
         <p >
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
             maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
             autem culpa cumque cupiditate dolor doloremque doloribus.
         </p>
-        <ul style="text-align: justify; font-size: 18px;">
+        <ul>
             <li>Lorem ipsum.</li>
             <li>Aperiam, sunt?</li>
             <li>Est, molestias!</li>
         </ul>
-        <p style="text-align: center; letter-spacing: 5px;font-size: larger;">THANK YOU!</p>
+        <p id="last">THANK YOU!</p>
     </div>
 </div>
 

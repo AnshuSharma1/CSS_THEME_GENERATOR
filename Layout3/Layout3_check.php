@@ -55,6 +55,7 @@ if (count($_POST) > 0) {
     }
 
     fwrite($style, "height: 100%;\nposition: relative;\n}\n");
+    fwrite($show,"<div class=\"bgimg-1\">\n");
 
     //Adding navbar/header
     if ($_POST['nav_check'] == 1 && array_key_exists('nav_check', $_POST)) {
@@ -73,6 +74,110 @@ if (count($_POST) > 0) {
         fwrite($show, "</div>\n");
     }
 
+    fwrite($show,"<div class=\"head\">\n <span class=\"main\">Welcome to Layout 3</span>\n </div>\n</div>\n");
+    fwrite($show,"<div id=\"home\">
+        <h3 > INTRODUCTION </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus, explicabo fugiat id in incidunt inventore iste iure
+            iusto laudantium minus nemo odit officia officiis perferendis quibusdam quidem quis repellat sed sequi similique
+            sint temporibus veritatis voluptas voluptates voluptatibus. A accusamus amet aut blanditiis consectetur
+            cupiditate dolore eos est eum explicabo facilis fuga harum hic iste maiores maxime minus modi mollitia
+            necessitatibus nihil odit officia quas, quibusdam, quos ratione sequi suscipit tempora tenetur.
+        </p>
+    </div>
+
+    <div class=\"bgimg-2\">
+        <div class=\"head\">
+            <span class=\"main\">Lorem Ipsum</span>
+        </div>
+    </div>
+
+    <div id=\"about\" >
+        <h3> About </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus.
+            <br><br>
+            explicabo fugiat id in incidunt inventore iste iure
+            iusto laudantium minus nemo odit officia officiis perferendis quibusdam quidem quis repellat sed sequi similique
+            sint temporibus veritatis voluptas voluptates voluptatibus. A accusamus amet aut blanditiis consectetur
+            cupiditate dolore eos est eum explicabo facilis fuga harum hic iste maiores maxime minus modi mollitia
+            necessitatibus nihil odit officia quas, quibusdam, quos ratione sequi suscipit tempora tenetur.
+        </p>
+    </div>
+
+    <div class=\"bgimg-3\">
+        <div class=\"head\">
+            <span class=\"main\">Dolor Sit Amet</span>
+        </div>
+    </div>
+
+    <div id=\"contact\" >
+        <h3> Contact Us </h3>
+        <p >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus.
+        </p>
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Aperiam, sunt?</li>
+            <li>Est, molestias!</li>
+        </ul>
+        <p id=\"last\">THANK YOU!</p>
+    </div>\n");
+    fwrite($style,"body, html {\nheight: 100%;\nmargin: 0;\nposition: relative;\n}\n.bgimg-1, .bgimg-2, .bgimg-3 {\nposition: relative;
+background-attachment: fixed;\nbackground-position: center;\nbackground-repeat: no-repeat;\nbackground-size: cover;\nopacity: 0.65;\n}\n
+.bgimg-1 {
+         min-height: 70%;
+         background-image: url('53.jpg');
+        }
+.bgimg-2 {
+            min-height: 70%;
+            background-image: url(\"4.jpg\");
+        }
+.bgimg-3 {
+            min-height: 70%;
+            background-image: url(\"6.jpg\");
+        }
+.head   {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+.main   {
+            background-color: #111;
+            color: #fff;
+            font-size: larger;
+            padding: 18px;
+            letter-spacing: 10px;
+        }
+#home   {
+            padding: 20px 50px;
+        }
+#home h3{
+            text-align: center;
+            letter-spacing: 5px;
+            font-weight: 500;
+            font-size: larger;
+        }
+#home p{
+            color: #3c3c3c;
+        }
+#about,#contact{
+            padding: 20px 50px; background-color: #3c3c3c; color: white; text-align: justify;
+        }
+#about h3,#contact h3{
+            text-align: center;font-size: larger; letter-spacing: 5px; font-weight: 500;
+        }
+#last   {
+            text-align: center; letter-spacing: 5px;font-size: larger;
+        }\n");
 
     //Closing of files here
     fwrite($show, "</div>\n</body>\n</html>\n");
@@ -81,7 +186,7 @@ if (count($_POST) > 0) {
     $_SESSION['submitted'] = true;
 
     //After checking, go to show and download of layout
-    header('location:Layout3_show.html');
+    header('location:Layout3_download.php');
 
 }
 ?>
