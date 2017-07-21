@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">-->
+    <!--<script src="jquery-3.2.1.min.js"></script>-->
+    <!--<script src="bootstrap/js/bootstrap.min.js"></script>-->
+    <title>Layout 3</title>
+    <style>
+        *{
+            font: 400 16px/1.8 "Lato", sans-serif;
+        }
+        .maincontainer{
+            height: 100%;
+            float: right;
+            margin: 10px ;
+            padding: 20px;
+            position: relative;
+            width: 70%;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            position: relative;
+
+        }
+
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 0.65;
+        }
+
+        .bgimg-1 {
+            min-height: 70%;
+            background-image: url('53.jpg');
+        }
+
+        .bgimg-2 {
+            min-height: 70%;
+            background-image: url("4.jpg");
+        }
+
+        .bgimg-3 {
+            min-height: 70%;
+            background-image: url("6.jpg");
+        }
+
+        .head {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .main {
+            background-color: #111;
+            color: #fff;
+            font-size: larger;
+            padding: 18px;
+            letter-spacing: 10px;
+        }
+        .navbar{
+            height: 40px;
+            color: white;
+            font-size: larger;
+            background-color: #3c3c3c;
+            padding: 15px;
+            top: 0;
+            border-radius: 0;
+        }
+        .nav-head{
+            float:left;
+        }
+        .nav-items{
+            padding: 0 10px;
+        }
+        .nav-items li{
+            display: inline-block;
+            padding:0 20px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="maincontainer">
+
+    <div class="bgimg-1">
+        <div class="navbar">
+            <div class="nav-head">Website name</div>
+            <div class="nav-items">
+                <li><a href="#contact" style="text-decoration: none;color: white;">Contact Us</a></li>
+                <li><a href="#about" style="text-decoration: none;color: white;">About</a></li>
+                <li><a href="#home" style="text-decoration: none;color: white;">Home</a></li>
+            </div>
+        </div>
+        <div class="head">
+            <span class="main">Welcome to Layout 3</span>
+        </div>
+    </div>
+
+    <div id="home" style="padding: 20px 50px; ">
+        <h3 style="text-align: center; letter-spacing: 5px; font-weight: 500;font-size: larger; "> INTRODUCTION </h3>
+        <p style="color: #3c3c3c;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus, explicabo fugiat id in incidunt inventore iste iure
+            iusto laudantium minus nemo odit officia officiis perferendis quibusdam quidem quis repellat sed sequi similique
+            sint temporibus veritatis voluptas voluptates voluptatibus. A accusamus amet aut blanditiis consectetur
+            cupiditate dolore eos est eum explicabo facilis fuga harum hic iste maiores maxime minus modi mollitia
+            necessitatibus nihil odit officia quas, quibusdam, quos ratione sequi suscipit tempora tenetur.
+        </p>
+    </div>
+
+    <div class="bgimg-2">
+        <div class="head">
+            <span class="main">Lorem Ipsum</span>
+        </div>
+    </div>
+
+    <div id="about" style="padding: 20px 50px; background-color: #3c3c3c;color: white; text-align: justify;" >
+        <h3 style="text-align: center;font-size: larger; letter-spacing: 5px; font-weight: 500;"> About </h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus.
+            <br><br>
+            explicabo fugiat id in incidunt inventore iste iure
+            iusto laudantium minus nemo odit officia officiis perferendis quibusdam quidem quis repellat sed sequi similique
+            sint temporibus veritatis voluptas voluptates voluptatibus. A accusamus amet aut blanditiis consectetur
+            cupiditate dolore eos est eum explicabo facilis fuga harum hic iste maiores maxime minus modi mollitia
+            necessitatibus nihil odit officia quas, quibusdam, quos ratione sequi suscipit tempora tenetur.
+        </p>
+    </div>
+
+    <div class="bgimg-3">
+        <div class="head">
+            <span class="main">Dolor Sit Amet</span>
+        </div>
+    </div>
+
+    <div id="contact" style="padding: 20px 50px; background-color: #3c3c3c;color: white; text-align: justify;" >
+        <h3 style="text-align: center; letter-spacing: 5px; font-weight: 500; font-size: larger;"> Contact Us </h3>
+        <p >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae culpa cum earum, eius eum explicabo ipsam
+            maiores natus necessitatibus non obcaecati porro, praesentium reprehenderit ullam ut. Accusamus ad adipisci aut
+            autem culpa cumque cupiditate dolor doloremque doloribus.
+        </p>
+        <ul style="text-align: justify; font-size: 18px;">
+            <li>Lorem ipsum.</li>
+            <li>Aperiam, sunt?</li>
+            <li>Est, molestias!</li>
+        </ul>
+        <p style="text-align: center; letter-spacing: 5px;font-size: larger;">THANK YOU!</p>
+    </div>
+</div>
+
+</body>
+</html>
