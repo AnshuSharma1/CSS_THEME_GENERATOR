@@ -3,7 +3,7 @@ error_reporting(!E_NOTICE);
 @session_start();
 if ($_SESSION['submitted']) {
     $_SESSION['submitted'] = false;
-    header('location:Layout2.php');
+    header('location:Layout3.php');
 }
 
 ?>
@@ -73,25 +73,6 @@ if ($_SESSION['submitted']) {
         }
     }
 
-    @media (max-width: 991px) {
-
-        .add-main {
-            margin-left: 20px;
-            padding: 20px 0;
-        }
-    }
-
-    @media (min-width: 991px) {
-
-        .add-main {
-
-            padding: 50px 0 50px 20px;
-        }
-
-        #border-prop {
-            padding-left: 30px;
-        }
-    }
 
 
 </style>
