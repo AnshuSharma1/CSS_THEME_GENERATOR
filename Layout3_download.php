@@ -18,9 +18,9 @@
         $zip->open("Layout3.zip",ZipArchive::CREATE);
         $zip->addFile('Layout3_show.html','Layout3_show.html');
         $zip->addFile('Layout3_style.css','Layout3_style.css');
-        $zip->addFile('4.jpg','4.jpg');
-        $zip->addFile('6.jpg','6.jpg');
-        $zip->addFile('53.jpg','53.jpg');
+        $zip->addFile('Images/4.jpg','Images/4.jpg');
+        $zip->addFile('Images/6.jpg','Images/6.jpg');
+        $zip->addFile('Images/53.jpg','Images/53.jpg');
         $zip->close();
         ?>
         <a href="Layout3.zip" download="Layout3.zip" style="margin-right: 20px;font-family: Cambria;" class="a">Download the ZIP file!</a>

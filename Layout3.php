@@ -27,7 +27,7 @@ if ($_SESSION['submitted']) {
     }
 
     body {
-        background: url("518079-background-hd.jpg");
+        background: url("Images/518079-background-hd.jpg");
     }
 
     #header {
@@ -98,7 +98,7 @@ if ($_SESSION['submitted']) {
                     <hr style="width: 30%; margin: 20px 20px 30px 35%; border-color: #a1a1a1;">
                 </div>
                 <div class="row text-center">
-                    <div class="col-md-8 col-md-offset-2"><img src="parallax.gif" alt="parallax" width="100%"></div>
+                    <div class="col-md-8 col-md-offset-2"><img src="Images/parallax.gif" alt="parallax" width="100%"></div>
                 </div>
                 <div class="row text-center" style="padding-top: 30px;">
                     <h4 class=" col-md-10 col-md-offset-1" style="line-height: 25px;">Parallax scrolling is a web site trend where the background content (i.e. an image) is moved at
@@ -255,7 +255,7 @@ if ($_SESSION['submitted']) {
                     </div>
                     <div class="col-md-5 hidden-sm hidden-xs navc"
                          style="text-align:  center; padding-left: 0;padding-right: 30px;">
-                        <img src="header.png" alt="Header" width="100%">
+                        <img src="Images/header.png" alt="Header" width="100%">
                     </div>
                 </div>
                 <div class="row">

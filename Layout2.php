@@ -3,7 +3,7 @@ error_reporting(!E_NOTICE);
 @session_start();
 if ($_SESSION['submitted']) {
     $_SESSION['submitted'] = false;
-    header('location:Layout1.php');
+    header('location:Layout2.php');
 }
 
 ?>
@@ -14,9 +14,8 @@ if ($_SESSION['submitted']) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans|Raleway|Fresca" rel="stylesheet">
-
     <head>
-		<title>Layout 1</title>
+		<title>Layout 2</title>
 	</head>
     <style>
         * {
@@ -27,7 +26,7 @@ if ($_SESSION['submitted']) {
             margin: 0;
         }
         body{
-        background : url("518079-background-hd.jpg");
+        background : url("Images/518079-background-hd.jpg");
         }
 
         #header{
@@ -93,18 +92,19 @@ if ($_SESSION['submitted']) {
 
 <div  id="header">
     <h1 class="text-center">CSS THEME GENERATOR</h1>
-    <p class="text-center subheading">LAYOUT 1</p>
+    <p class="text-center subheading">LAYOUT 2</p>
 
     <p>
-        Welcome to LAYOUT 1 of CSS THEME GENERATOR! This is a basic layout having a header, a container , side menu and a footer with
+        Welcome to LAYOUT 2 of CSS THEME GENERATOR! This is a basic layout having a header, a container , a carousel and a footer with
         some additional CSS settings. <br>
         Enjoy :)
         <br>
-        Note: Scale your elements accordingly with the sizes of the elements!
+        Note: 1) Scale your elements accordingly with the sizes of the elements!<br>
+        <span style="margin-left: 45px;"> 2) Bootstrap carousel plugin will be enabled.</span>
     </p>
 
     <div  style=" margin-top: 30px;padding: 10px;">
-        <form action="Layout1_check.php" method="POST" >
+        <form action="Layout2_check.php" method="POST" >
             <div class="row panel panel-default">
                     <div class="row">
                     <h3 class="text-center" > MAIN CONTAINER</h3>
@@ -187,7 +187,7 @@ if ($_SESSION['submitted']) {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-1"><img class="hidden-sm hidden-xs" src="line.png" alt="line"></div>
+                    <div class="col-md-1"><img class="hidden-sm hidden-xs" src="Images/line.png" alt="line"></div>
                     <div class="col-md-6" style="padding-top: 0;">
                         <div class="row text-center" >
                             <div class="col-xs-12" style="margin-bottom: 30px;">
@@ -269,7 +269,7 @@ if ($_SESSION['submitted']) {
                         </div>
                     </div>
                     <div class="col-md-5 hidden-sm hidden-xs navc" style="text-align:  center; padding-left: 0;padding-right: 30px;">
-                        <img src="header.png" alt="Main container" width="100%">
+                        <img src="Images/header.png" alt="Header" width="100%">
                     </div>
                 </div>
                 <div class="row">
@@ -287,7 +287,7 @@ if ($_SESSION['submitted']) {
                 <h3 class="text-center" >TEXT CONTAINER</h3>
                 <hr style="width: 30%; margin: 20px 20px 30px 35%; border-color: #a1a1a1;">
                 <div class="col-md-6 col-md-offset-3 hidden-xs hidden-sm" style="margin-bottom: 50px;">
-                    <img src="text-container.png" style="width:90%;" alt="text container demo" >
+                    <img src="Images/text-container.png" style="width:90%;" alt="text container demo" >
                 </div>
                     <div class="row" style="padding-bottom: 20px;">
                         <br>
@@ -308,7 +308,7 @@ if ($_SESSION['submitted']) {
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1"><img class="hidden-sm hidden-xs" src="line.png" alt="line"></div>
+                        <div class="col-md-1"><img class="hidden-sm hidden-xs" src="Images/line.png" alt="line"></div>
                         <div class="col-md-6">
                             <div class="row text-center" >
                                 <div class="col-xs-6 " style="padding-left: 0;">
@@ -355,61 +355,45 @@ if ($_SESSION['submitted']) {
                     </div>
             </div>
             <br><br>
-            <div class="row panel panel-default" style="padding-bottom: 20px;">
-                <h3 class="text-center" >SIDE MENU</h3>
-                <hr style="width: 30%; margin: 20px 20px 30px 35%; border-color: #a1a1a1;">
-                <br>
+            <div class="row panel panel-default">
+                <h3 class="text-center" >CAROUSEL</h3>
+                <hr style="width: 30%; margin: 20px 20px 20px 35%; border-color: #a1a1a1;">
+                <p class="text-center" style="font-size: larger; padding: 10px;">"A rotating display that can house a variety of content
+                that usually includes "next" & "previous" buttons to rotate through the content."</p>
                 <div class="row">
-                    <div class="col-md-6 col-sm-12 col-xs-12 text-center">
-                        <div class="row" style="display: block;font-size: larger;">
-                            <label style="padding: 0 20px;margin: 0;font-size: 18px;" for="sidemenu_check">Do you want a side
-                                menu??</label>
-                            <input type='hidden' value='0' name='side-check'>
-                            <input type="checkbox" id="sidemenu_check" value='1' style="margin-bottom: 20px;" name="side-check">
-                            <br>
-                        </div>
-                        <div class="sidec">
-                            <div class="row" style="padding: 30px 30px 0 30px;">
-                                    <div class="form-group" style="margin-bottom: 50px;">
-                                        <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Width:</div>
-                                        <div class="input-group col-md-8">
-                                            <input id="side_width" type="number" min="50" max="500"
-                                                   class="form-control form-inline" name="side-width"
-                                                   placeholder="Width of side menu" value="200">
-                                            <span class="input-group-addon">px</span>
-                                        </div>
-                                    </div>
+                    <div class="col-md-6 col-md-offset-3 text-center"><img src="Images/carousel-rig.gif" alt="carousel gif" width="70%"></div>
+                </div>
+                <div class="row text-center" style="display: block;font-size: larger; padding-top: 40px;">
+                    <label style="padding: 0 20px 0 5px;margin: 0;font-size: 20px;" for="carousel_check">Do you want a Carousel??</label>
+                    <input type='hidden' value='0' name='carousel_check'>
+                    <input type="checkbox" id="carousel_check" value='1' style="margin-bottom: 20px;" name="carousel_check">
+                    <br>
+                </div>
+                <div class="carousel">
+                    <div class="row" style="padding: 50px 30px 0 30px;">
+                        <div class="form-group" style="margin-bottom: 50px;">
+                            <div class="col-md-6 " style="margin-top: 3px;font-size: larger;text-align: center;">Slide time of carousel:</div>
+                            <div class="input-group col-md-4 col-md-offset-1">
+                                <input id="carousel_slide" type="number" min="1000"
+                                       class="form-control form-inline" name="carousel-slide"
+                                       placeholder="Slide time of carousel" value="4000">
+                                <span class="input-group-addon">ms</span>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 hidden-sm hidden-xs sidec" style="text-align:  center;">
-                        <img src="side.png" alt="Main container" width="95%">
-                    </div>
-                </div>
-
-                <div class="row sidec">
-                    <div class="col-md-7">
-                        <div class="col-xs-6 col-md-4 col-md-offset-1 text-center"  style="padding-left: 0;">
-                            <label for="side-color">Text-color</label>
-                            <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                   name="side-color" id="side-color" value="1C1C1B">
+                    <div class="row text-center">
+                        <h4 class="col-xs-6"  style="margin: 0;padding: 0;">
+                            Do you want captions?
+                        </h4>
+                        <div class="col-xs-3" style="padding: 0;">
+                            <label for="carousel-caption-yes">Yes &nbsp<input type="radio" id="carousel-caption-yes" value="Yes" name="carousel-caption" style="margin-bottom: 10px;"></label>
                         </div>
-                        <div class="col-xs-6  col-md-4 col-md-offset-1 text-center" style="padding: 0;">
-                            <label for="side-back-color">Background-color</label>
-                            <input type="text" class="form-control jscolor" style="border-radius: 4px;"
-                                   name="side-back-color" id="side-back-color" value="FF9875">
+                        <div class="col-xs-3 text-left" style="padding: 0;">
+                            <label for="carousel-caption-no">No &nbsp<input  type="radio" id="carousel-caption-no" value="No" name="carousel-caption"  style="margin-bottom: 10px;" checked></label>
                         </div>
                     </div>
                 </div>
-                <div class="row sidec" style="padding-top: 30px;">
-                    <div class="col-md-4 text-center" style="font-size: 25px;">Alignment:</div>
-                    <div class="col-md-2 col-md-offset-1 col-sm-6 col-xs-6  text-center " style="font-size: 20px;">
-                        <label>Left <input type="radio" name="side-align" value="left" checked></label>
-                    </div>
-                    <div class="col-md-2 col-sm-6 col-xs-6 col-md-offset-1 text-center" style="font-size: 20px;">
-                        <label>Right <input type="radio" name="side-align" value="right"></label>
-                    </div>
-                </div>
+                <br>
             </div>
             <br><br>
             <div class="row form-group panel panel-default" style="padding-bottom: 20px;">
@@ -429,9 +413,9 @@ if ($_SESSION['submitted']) {
                                 <div class="form-group" style="margin-bottom: 50px;">
                                     <div class="col-md-4 " style="margin-top: 3px;font-size: larger;text-align: center;">Height:</div>
                                     <div class="input-group col-md-8">
-                                        <input id="footer_height" type="number" min="20" max="150"
+                                        <input id="footer_height" type="number" min="40" max="150"
                                                class="form-control form-inline" name="footer-height"
-                                               placeholder="Height of footer" value="30">
+                                               placeholder="Height of footer" value="50">
                                         <span class="input-group-addon">px</span>
                                     </div>
                                 </div>
@@ -439,7 +423,7 @@ if ($_SESSION['submitted']) {
                         </div>
                     </div>
                     <div class="col-md-6 hidden-sm hidden-xs footc" style="text-align:  center;">
-                        <img src="footer.png" alt="Footer" width="95%">
+                        <img src="Images/footer.png" alt="Footer" width="95%">
                     </div>
                 </div>
 
@@ -510,9 +494,9 @@ if ($_SESSION['submitted']) {
         $('.test2').hide();
         $('.border-prop').hide();
         $('.border-text-prop').hide();
-        $('.sidec').hide();
         $('.navc').hide();
         $('.footc').hide();
+        $(".carousel").hide();
         $('#fixed').click(function () {
                 $(".test2").hide();
                 $(".test1").show();
@@ -533,14 +517,14 @@ if ($_SESSION['submitted']) {
         $("#border-text-no").click(function () {
             $(".border-text-prop").hide();
         });
-        $("#sidemenu_check").click(function () {
-            $(".sidec").toggle();
-        });
         $("#header_check").click(function () {
             $(".navc").toggle();
         });
         $("#footer_check").click(function () {
             $(".footc").toggle();
+        });
+        $("#carousel_check").click(function () {
+            $(".carousel").toggle();
         });
     });
 </script>

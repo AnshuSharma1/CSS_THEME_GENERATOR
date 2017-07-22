@@ -133,15 +133,15 @@ if (count($_POST) > 0) {
 background-attachment: fixed;\nbackground-position: center;\nbackground-repeat: no-repeat;\nbackground-size: cover;\nopacity: 0.65;\n}\n
 .bgimg-1 {
          min-height: 70%;
-         background-image: url('53.jpg');
+         background-image: url('Images/53.jpg');
         }
 .bgimg-2 {
             min-height: 70%;
-            background-image: url(\"4.jpg\");
+            background-image: url(\"Images/4.jpg\");
         }
 .bgimg-3 {
             min-height: 70%;
-            background-image: url(\"6.jpg\");
+            background-image: url(\"Images/6.jpg\");
         }
 .head   {
             position: absolute;

@@ -151,7 +151,7 @@ if (count($_POST) > 0) {
             <div class=\"carousel-inner\" role=\"listbox\">
 
                 <div class=\"item active\">
-                    <img src=\" 4.jpg\" alt=\"Chania\" style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
+                    <img src=\" Images/4.jpg\" alt=\"Chania\" style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
                     if($_POST['carousel-caption']=="Yes"){
                         fwrite($show,"$car_cap[0]");
                     }
@@ -159,7 +159,7 @@ if (count($_POST) > 0) {
                 </div>
 
                 <div class=\"item\">
-                    <img src=\"6.jpg\" alt=\"Chania\"  style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
+                    <img src=\"Images/6.jpg\" alt=\"Chania\"  style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
                     if($_POST['carousel-caption']=="Yes"){
                         fwrite($show,"$car_cap[1]");
                     }
@@ -167,7 +167,7 @@ if (count($_POST) > 0) {
                 </div>
                 
                 <div class=\"item\">
-                    <img src=\"10.jpg\" alt=\"Flower\"   style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
+                    <img src=\"Images/10.jpg\" alt=\"Flower\"   style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
                     if($_POST['carousel-caption']=="Yes"){
                         fwrite($show,"$car_cap[2]");
                     }
@@ -175,7 +175,7 @@ if (count($_POST) > 0) {
                 </div>
 
                 <div class=\"item\">
-                    <img src=\"53.jpg\" alt=\"Flower\"   style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
+                    <img src=\"Images/53.jpg\" alt=\"Flower\"   style=\" width:".$car_img_width."px; height:".$car_img_height."px;\">\n");
                     if($_POST['carousel-caption']=="Yes"){
                         fwrite($show,"$car_cap[3]");
                     }

@@ -32,10 +32,10 @@
             $zip->open("Layout2.zip",ZipArchive::CREATE);
             $zip->addFile('Layout2_show.html','Layout2_show.html');
             $zip->addFile('Layout2_style.css','Layout2_style.css');
-            $zip->addFile('4.jpg','4.jpg');
-            $zip->addFile('6.jpg','6.jpg');
-            $zip->addFile('10.jpg','10.jpg');
-            $zip->addFile('53.jpg','53.jpg');
+            $zip->addFile('Images/4.jpg','Images/4.jpg');
+            $zip->addFile('Images/6.jpg','Images/6.jpg');
+            $zip->addFile('Images/10.jpg','Images/10.jpg');
+            $zip->addFile('Images/53.jpg','Images/53.jpg');
             $zip->addFile('bootstrap/css/bootstrap.min.css','bootstrap/css/bootstrap.min.css');
             $zip->addFile('bootstrap/js/bootstrap.min.js','bootstrap/js/bootstrap.min.js');
             $zip->addFile('bootstrap/fonts/glyphicons-halflings-regular.woff',    'bootstrap/fonts/glyphicons-halflings-regular.woff');
