@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Candara;
+            color: white;
+            background: #FFA17F; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #00223E, #FFA17F); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #00223E, #FFA17F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        @media (min-width: 1000px){
+            .layout1{
+                margin-left: 50px;
+            }
+        }
+        @media (max-width: 1000px){
+            .layout1{
+                margin-left: 30px;
+            }
+        }
+        @media (max-width: 768px){
+            .layout1{
+                margin-left: 0px;
+            }
+        }
+        @media (min-width: 912px) {
+            .preview{
+                margin: 0 10px;
+            }
+        }
+        @media (max-width: 912px) and (min-width: 768px) {
+            .preview{
+                margin: 0 20px 10px 20px;
+            }
+        }
+        @media (max-width: 768px) {
+            .preview{
+                margin: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<br>
+<h2 class="text-center" style="padding: 10px;">CSS THEME GENERATOR</h2>
+<br>
+<p style="padding: 20px 50px;font-size: 20px;line-height: 1.8" class="text-center">
+    Welcome to CSS THEME GENERATOR ! We provide you 3 amazing basic layout generators to help you generate basic layouts for your
+    project which will save your time and make your work hassle free.
+</p>
+<div class="row text-center" style="margin: 40px; padding: 20px 0px;">
+    <div class="col-sm-3 layout1 " style="border: 1px solid white; border-radius: 3px; padding: 10px;margin-bottom: 50px;" >
+        <img src="LAYOUT1.JPG" alt="layout1" width="100%" class="img-thumbnail">
+        <br><br>
+        <a href="" class="btn btn-danger preview">
+            Preview
+        </a>
+        <a href="" class="btn btn-success">
+            Create
+        </a>
+        <br><br>
+        <p style="font-size: larger;">Header , Text container , Footer , Sidemenu.</p>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 layout2"  style="border: 1px solid white; border-radius: 3px; padding: 10px;margin-bottom: 50px;">
+        <img src="LAYOUT2.JPG" alt="layout2" width="100%" class="img-thumbnail">
+        <br><br>
+        <div style="margin-bottom: 20px;">
+            <a href="" class="btn btn-danger preview">
+                Preview
+            </a>
+            <a href="" class="btn btn-success">
+                Create
+            </a>
+        </div>
+        <p style="font-size: larger;">Header , Text container , Footer , Carousel.</p>
+    </div>
+    <div class="col-sm-3 col-sm-offset-1 layout3"  style="border: 1px solid white; border-radius: 3px; padding: 10px;">
+        <img src="LAYOUT3.JPG" alt="layout3" width="100%" class="img-thumbnail">
+        <br><br>
+        <a href="" class="btn btn-danger preview">
+            Preview
+        </a>
+        <a href="" class="btn btn-success">
+            Create
+        </a>
+        <br><br>
+        <p style="font-size: larger;"> Header , Text container , Footer , Parallax.</p>
+    </div>
+</div>
+</body>
+</html>
