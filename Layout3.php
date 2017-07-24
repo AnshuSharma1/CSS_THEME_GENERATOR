@@ -87,7 +87,9 @@ if ($_SESSION['submitted']) {
         some additional CSS settings. <br>
         Enjoy :)
         <br>
-        Note: Scale your elements accordingly with the sizes of the elements!<br>
+        Note: 1) Parallax effect will be only visible in desktop!
+        <br>
+         2) Scale your elements accordingly with the sizes of the elements!<br>
     </p>
 
     <div style=" margin-top: 30px;padding: 10px;">
